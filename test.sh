@@ -42,6 +42,7 @@ test_ns "ns/am"
 test_ns "ns/asset"
 test_ns "ns/auto"
 test_ns "ns/perfmon"
-# test_ns "ns/ems"
+test_ns "ns/promcode"
+test_ns "ns/promcode/shapes/1.0"
 
 echo "${green}ALL TESTS PASSED${reset}"
