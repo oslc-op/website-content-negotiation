@@ -22,7 +22,7 @@ ns_definitions:
 
   - prefix: "/ns/config"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/psd01/config-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/ps01/config-vocab.html"
     files:
       rdfxml: "config/config-vocab.rdf"
       ntriples: "config/config-vocab.nt"
@@ -31,7 +31,7 @@ ns_definitions:
 
   - prefix: "/ns/config/shapes/1.0"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/psd01/config-resources.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/ps01/config-resources.html"
     files:
       rdfxml: "config/config-shapes.rdf"
       ntriples: "config/config-shapes.nt"
@@ -103,7 +103,7 @@ ns_definitions:
 
   - prefix: "/ns/core/trs"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/psd01/tracked-resource-set-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/ps01/tracked-resource-set-vocab.html"
     files:
       rdfxml: "trs/trs-vocab.rdf"
       ntriples: "trs/trs-vocab.nt"
@@ -112,7 +112,7 @@ ns_definitions:
 
   - prefix: "/ns/core/trspatch"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/psd01/tracked-resource-set-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/ps01/tracked-resource-set-vocab.html"
     files:
       rdfxml: "trs/trs-vocab.rdf"
       ntriples: "trs/trs-vocab.nt"
@@ -121,7 +121,7 @@ ns_definitions:
 
   - prefix: "/ns/trs/shapes/3.0"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/psd01/tracked-resource-set-shapes.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/ps01/tracked-resource-set-shapes.html"
     files:
       rdfxml: "trs/trs-shapes.rdf"
       ntriples: "trs/trs-shapes.nt"
