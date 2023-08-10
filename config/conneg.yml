@@ -22,7 +22,7 @@ ns_definitions:
 
   - prefix: "/ns/config"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/psd01/config-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/ps01/config-vocab.html"
     files:
       rdfxml: "config/config-vocab.rdf"
       ntriples: "config/config-vocab.nt"
@@ -31,7 +31,7 @@ ns_definitions:
 
   - prefix: "/ns/config/shapes/1.0"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/psd01/config-resources.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/ps01/config-resources.html"
     files:
       rdfxml: "config/config-shapes.rdf"
       ntriples: "config/config-shapes.nt"
@@ -93,17 +93,26 @@ ns_definitions:
       turtle: "qm/quality-management-shapes.ttl"
 
   - prefix: "/ns/am"
-    core_version: "2.0"
-    html_uri: "https://archive.open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Vocabulary/index.html"
+    core_version: "3.0"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/am/v3.0/os/architecture-management-vocab.html"
     files:
-      rdfxml: "am/am.rdf"
-      ntriples: "am/am.nt"
-      jsonld: "am/am.jsonld"
-      turtle: "am/am.ttl"
+      rdfxml: "am/architecture-management-vocab.rdf"
+      ntriples: "am/architecture-management-vocab.nt"
+      jsonld: "am/architecture-management-vocab.jsonld"
+      turtle: "am/architecture-management-vocab.ttl"
+
+  - prefix: "/ns/am/shapes/3.0"
+    core_version: "3.0"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/am/v3.0/os/architecture-management-shapes.html"
+    files:
+      rdfxml: "am/architecture-management-shapes.rdf"
+      ntriples: "am/architecture-management-shapes.nt"
+      jsonld: "am/architecture-management-shapes.jsonld"
+      turtle: "am/architecture-management-shapes.ttl"
 
   - prefix: "/ns/core/trs"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/psd01/tracked-resource-set-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/ps02/tracked-resource-set-vocab.html"
     files:
       rdfxml: "trs/trs-vocab.rdf"
       ntriples: "trs/trs-vocab.nt"
@@ -112,7 +121,7 @@ ns_definitions:
 
   - prefix: "/ns/core/trspatch"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/psd01/tracked-resource-set-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/ps02/tracked-resource-set-vocab.html"
     files:
       rdfxml: "trs/trs-vocab.rdf"
       ntriples: "trs/trs-vocab.nt"
@@ -121,7 +130,7 @@ ns_definitions:
 
   - prefix: "/ns/trs/shapes/3.0"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/psd01/tracked-resource-set-shapes.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/ps02/tracked-resource-set-shapes.html"
     files:
       rdfxml: "trs/trs-shapes.rdf"
       ntriples: "trs/trs-shapes.nt"
