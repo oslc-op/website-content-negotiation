@@ -191,9 +191,9 @@ ns_definitions:
       jsonld: "ems/ems.jsonld"
       turtle: "ems/ems.ttl"
 
-  - prefix: "/ns/acc"
+  - prefix: "/ns/core/acc"
     core_version: "2.0"
-    html_uri: " https://archive.open-services.net/wiki/core/IndexableLinkedDataProvider-2.0/#Access-Contexts"
+    html_uri: "https://archive.open-services.net/wiki/core/IndexableLinkedDataProvider-2.0/#Access-Contexts"
     files:
       rdfxml: "acc/acc.rdf"
       ntriples: "acc/acc.nt"
