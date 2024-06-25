@@ -119,7 +119,7 @@ ns_definitions:
       jsonld: "sysmlv2/sysml-vocab.jsonld"
       turtle: "sysmlv2/sysml-vocab.ttl"
 
-  - prefix: "/ns/sysmlv2/shapes/3.0"
+  - prefix: "/ns/sysmlv2/shapes/20240801"
     core_version: "2.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/sysml/v2.0/psd01/sysml-shapes.html"
     files:
