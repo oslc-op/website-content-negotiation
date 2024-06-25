@@ -22,7 +22,7 @@ ns_definitions:
 
   - prefix: "/ns/config"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/ps01/config-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/os/config-vocab.html"
     files:
       rdfxml: "config/config-vocab.rdf"
       ntriples: "config/config-vocab.nt"
@@ -31,7 +31,7 @@ ns_definitions:
 
   - prefix: "/ns/config/shapes/1.0"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/ps01/config-resources.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/os/config-resources.html"
     files:
       rdfxml: "config/config-shapes.rdf"
       ntriples: "config/config-shapes.nt"
@@ -40,7 +40,7 @@ ns_definitions:
 
   - prefix: "/ns/cm"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/cm/v3.0/os/change-mgt-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/cm/v3.0/errata01/os/change-mgt-vocab.html"
     files:
       rdfxml: "cm/change-mgt-vocab.rdf"
       ntriples: "cm/change-mgt-vocab.nt"
@@ -49,7 +49,7 @@ ns_definitions:
 
   - prefix: "/ns/cm/shapes/3.0"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/cm/v3.0/os/change-mgt-shapes.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/cm/v3.0/errata01/os/change-mgt-shapes.html"
     files:
       rdfxml: "cm/change-mgt-shapes.rdf"
       ntriples: "cm/change-mgt-shapes.nt"
@@ -110,9 +110,27 @@ ns_definitions:
       jsonld: "am/architecture-management-shapes.jsonld"
       turtle: "am/architecture-management-shapes.ttl"
 
+  - prefix: "/ns/sysmlv2"
+    core_version: "2.0"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/sysml/v2.0/psd01/sysml-vocab.html"
+    files:
+      rdfxml: "sysmlv2/sysml-vocab.rdf"
+      ntriples: "sysmlv2/sysml-vocab.nt"
+      jsonld: "sysmlv2/sysml-vocab.jsonld"
+      turtle: "sysmlv2/sysml-vocab.ttl"
+
+  - prefix: "/ns/sysmlv2/shapes/3.0"
+    core_version: "2.0"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/sysml/v2.0/psd01/sysml-shapes.html"
+    files:
+      rdfxml: "sysmlv2/sysml-shapes.rdf"
+      ntriples: "sysmlv2/sysml-shapes.nt"
+      jsonld: "sysmlv2/sysml-shapes.jsonld"
+      turtle: "sysmlv2/sysml-shapes.ttl"
+
   - prefix: "/ns/core/trs"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/ps02/tracked-resource-set-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/os/tracked-resource-set-vocab.html"
     files:
       rdfxml: "trs/trs-vocab.rdf"
       ntriples: "trs/trs-vocab.nt"
@@ -121,7 +139,7 @@ ns_definitions:
 
   - prefix: "/ns/core/trspatch"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/ps02/tracked-resource-set-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/os/tracked-resource-set-vocab.html"
     files:
       rdfxml: "trs/trs-vocab.rdf"
       ntriples: "trs/trs-vocab.nt"
@@ -130,7 +148,7 @@ ns_definitions:
 
   - prefix: "/ns/trs/shapes/3.0"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/ps02/tracked-resource-set-shapes.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/os/tracked-resource-set-shapes.html"
     files:
       rdfxml: "trs/trs-shapes.rdf"
       ntriples: "trs/trs-shapes.nt"
