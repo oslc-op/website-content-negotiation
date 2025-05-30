@@ -5,23 +5,38 @@
 
 ## Getting started
 
-    npm i
-    npm start --dev_base=/Users/andrew/git/oslc/web/website/content/ns
+First, [install Go.](https://go.dev/dl/)
+
+Then, if necessary, adjust `config/conneg.yml` to point to your local copy of https://github.com/oslc-op/website/tree/master/content/ns
+
+Finally, run:
+
+```sh
+go run ./main.go
+```
 
 ## Deployment
 
 On the server:
 
-    cd ~/workspace/oslc-site-content-negotiation/
-    git checkout master
-    git pull
-    npm ci
-    npm i -g pm2
-    pm2 update
-    pm2 restart negotiation.js --update-env || NODE_ENV=production pm2 start negotiation.js
-    pm2 save
-    pm2 status
+```sh
+cd ~/workspace/oslc-site-content-negotiation/connego/
+git checkout master
+git pull
+cd connego
+go build -o connego main.go
+sudo systemctl daemon-reload
+sudo systemctl restart connego
+sudo systemctl enable connego
+sudo systemctl status connego
+```
 
-On the dev machine:
+## Testing
+
+To test the prod endpoint:
 
     ./test.sh -p
+
+To test the local endpoint:
+
+    ./test.sh
