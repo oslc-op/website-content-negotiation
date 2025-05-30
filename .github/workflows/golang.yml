@@ -24,7 +24,9 @@ jobs:
         go-version: '1.20'
 
     - name: Build
-      run: go build -v ./connego
+      run: go build -v .
+      working-directory: connego
 
     - name: Test
-      run: go test -v ./connego
+      run: go test -v .
+      working-directory: connego
