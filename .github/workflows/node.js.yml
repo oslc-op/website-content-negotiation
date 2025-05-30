@@ -13,13 +13,12 @@ permissions: {}
 
 jobs:
   build:
-
+    timeout-minutes: 15
     runs-on: ubuntu-latest
-
     strategy:
+      fail-fast: false
       matrix:
         node-version: [18.x, 20.x, 22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
