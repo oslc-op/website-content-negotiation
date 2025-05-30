@@ -1,7 +1,7 @@
 ## Node.js server to handle content negotiation for the OSLC website.
 
+[![Go](https://github.com/oslc-op/website-content-negotiation/actions/workflows/golang.yml/badge.svg?branch=master)](https://github.com/oslc-op/website-content-negotiation/actions/workflows/golang.yml)
 [![Discourse status](https://img.shields.io/discourse/https/meta.discourse.org/status.svg)](https://forum.open-services.net/)
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/OSLC/chat)
 
 ## Getting started
 
