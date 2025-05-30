@@ -12,6 +12,7 @@ Then, if necessary, adjust `config/conneg.yml` to point to your local copy of ht
 Finally, run:
 
 ```sh
+cd connego
 go run ./main.go
 ```
 
