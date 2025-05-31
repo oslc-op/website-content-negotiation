@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 # set -x
 set -eEuo pipefail
-red=`tput setaf 1`
-green=`tput setaf 2`
-reset=`tput sgr0`
+
+if [ -t 1 ]; then
+    red=$(tput setaf 1)
+    green=$(tput setaf 2)
+    reset=$(tput sgr0)
+else
+    red=""
+    green=""
+    reset=""
+fi
 
 URI_BASE="http://localhost:3000"
 if getopts "p" arg; then
