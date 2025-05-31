@@ -33,7 +33,7 @@ function test_ns() {
     curl -s --fail-with-body -H "Accept: application/n-triples" -L "${URI_BASE}/$1" > /dev/null
     curl -s --fail-with-body -H "Accept: application/ld+json" -L "${URI_BASE}/$1" > /dev/null
     curl -s --fail-with-body --compressed -H "Accept: text/turtle;q=1.0,application/rdf+xml;q=0.8,application/n-triples;q=0.2,application/ld+json;q=0.1" -L "${URI_BASE}/$1" > /dev/null
-    # curl -s --fail-with-body -H "Accept: text/html;q=1.0,text/*;q=0.8" -L "${URI_BASE}/$1" > /dev/null
+    curl -s --fail-with-body -H "Accept: text/html;q=1.0,text/*;q=0.8" -L "${URI_BASE}/$1" > /dev/null
 }
 
 test_ns "ns/core"
