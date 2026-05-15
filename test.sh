@@ -28,12 +28,12 @@ trap cleanup_on_exit ERR
 
 function test_ns() {
     echo "Running tests on '$1'"
-    curl --retry 3 --retry-delay 2 -s --fail-with-body -H "Accept: text/turtle" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting Turtle for ${URI_BASE}/$1"; exit $err; }
-    curl --retry 3 --retry-delay 2 -s --fail-with-body -H "Accept: application/rdf+xml" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting RDF/XML for ${URI_BASE}/$1"; exit $err; }
-    curl --retry 3 --retry-delay 2 -s --fail-with-body -H "Accept: application/n-triples" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting N-Triples for ${URI_BASE}/$1"; exit $err; }
-    curl --retry 3 --retry-delay 2 -s --fail-with-body -H "Accept: application/ld+json" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting JSON-LD for ${URI_BASE}/$1"; exit $err; }
-    curl --retry 3 --retry-delay 2 -s --fail-with-body --compressed -H "Accept: text/turtle;q=1.0,application/rdf+xml;q=0.8,application/n-triples;q=0.2,application/ld+json;q=0.1" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting any RDF via conneg for ${URI_BASE}/$1"; exit $err; }
-    curl --retry 3 --retry-delay 2 -s --fail-with-body -H "Accept: text/html;q=1.0,text/*;q=0.8" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting HTML for ${URI_BASE}/$1"; exit $err; }
+    curl --retry 3 --retry-delay 2 --retry-all-errors -s --fail-with-body -H "Accept: text/turtle" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting Turtle for ${URI_BASE}/$1"; exit $err; }
+    curl --retry 3 --retry-delay 2 --retry-all-errors -s --fail-with-body -H "Accept: application/rdf+xml" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting RDF/XML for ${URI_BASE}/$1"; exit $err; }
+    curl --retry 3 --retry-delay 2 --retry-all-errors -s --fail-with-body -H "Accept: application/n-triples" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting N-Triples for ${URI_BASE}/$1"; exit $err; }
+    curl --retry 3 --retry-delay 2 --retry-all-errors -s --fail-with-body -H "Accept: application/ld+json" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting JSON-LD for ${URI_BASE}/$1"; exit $err; }
+    curl --retry 3 --retry-delay 2 --retry-all-errors -s --fail-with-body --compressed -H "Accept: text/turtle;q=1.0,application/rdf+xml;q=0.8,application/n-triples;q=0.2,application/ld+json;q=0.1" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting any RDF via conneg for ${URI_BASE}/$1"; exit $err; }
+    curl --retry 3 --retry-delay 2 --retry-all-errors -s --fail-with-body -H "Accept: text/html;q=1.0,text/*;q=0.8" -L "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting HTML for ${URI_BASE}/$1"; exit $err; }
 }
 
 test_ns "ns/promcode"
