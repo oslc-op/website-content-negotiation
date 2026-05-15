@@ -1,6 +1,22 @@
 #!/usr/bin/env bash
-# set -x
 set -eEuo pipefail
+
+usage() {
+    cat <<EOF
+Usage: test.sh [-p|--prod] [-h|--help]
+
+OSLC Website Content Negotiation Test Suite
+
+Options:
+  -p, --prod   Run tests against open-services.net (production)
+  -h, --help   Show this help message
+
+Default: localhost:3000 (local/dev environment)
+
+This script tests all configured OSLC namespaces for proper
+connection negotiation across multiple content types.
+EOF
+}
 
 if [ -t 1 ]; then
     red=$(tput setaf 1)
@@ -12,19 +28,30 @@ else
     reset=""
 fi
 
-URI_BASE="http://localhost:3000"
-if getopts "p" arg; then
+show_help=0
+is_prod=0
+for opt in "$@"; do
+    case "$opt" in
+        -h|--help) show_help=1 ;;
+        -p|--prod) is_prod=1 ;;
+        *) echo "${red}Unknown option: $opt${reset}" >&2; exit 1 ;;
+    esac
+done
+
+[[ $show_help -eq 1 ]] && { usage; exit 0; }
+
+if [[ $is_prod -eq 1 ]]; then
     URI_BASE="http://open-services.net"
     echo "${green}Running production tests${reset}"
 else
+    URI_BASE="http://localhost:3000"
     echo "${red}Running tests locally${reset}"
 fi
 
-function cleanup_on_exit {
+cleanup_on_exit() {
     echo "${red}SOME TESTS FAILED${reset}"
 }
 trap cleanup_on_exit ERR
-
 
 function test_ns() {
     CURL_OPTS=(--retry 3 --retry-delay 7 --retry-all-errors -s --fail-with-body -L)
