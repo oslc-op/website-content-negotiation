@@ -36,6 +36,8 @@ function test_ns() {
     curl --retry 3 --retry-delay 2 -s --fail-with-body -H "Accept: text/html;q=1.0,text/*;q=0.8" -L "${URI_BASE}/$1" > /dev/null || { echo "Failed while getting HTML for ${URI_BASE}/$1"; exit 1; }
 }
 
+test_ns "ns/promcode"
+test_ns "ns/promcode/shapes/1.0"
 test_ns "ns/core"
 test_ns "ns/core/shapes/3.0"
 test_ns "ns/cm"
@@ -49,7 +51,5 @@ test_ns "ns/am"
 test_ns "ns/asset"
 test_ns "ns/auto"
 test_ns "ns/perfmon"
-test_ns "ns/promcode"
-test_ns "ns/promcode/shapes/1.0"
 
 echo "${green}ALL TESTS PASSED${reset}"
