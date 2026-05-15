@@ -32,13 +32,19 @@ show_help=0
 is_prod=0
 for opt in "$@"; do
     case "$opt" in
-        -h|--help) show_help=1 ;;
-        -p|--prod) is_prod=1 ;;
-        *) echo "${red}Unknown option: $opt${reset}" >&2; exit 1 ;;
+    -h | --help) show_help=1 ;;
+    -p | --prod) is_prod=1 ;;
+    *)
+        echo "${red}Unknown option: $opt${reset}" >&2
+        exit 1
+        ;;
     esac
 done
 
-[[ $show_help -eq 1 ]] && { usage; exit 0; }
+[[ $show_help -eq 1 ]] && {
+    usage
+    exit 0
+}
 
 if [[ $is_prod -eq 1 ]]; then
     URI_BASE="http://open-services.net"
@@ -55,14 +61,38 @@ trap cleanup_on_exit ERR
 
 function test_ns() {
     CURL_OPTS=(--retry 3 --retry-delay 7 --retry-all-errors -s --fail-with-body -L)
-    
+
     echo "Running tests on '$1'"
-    curl "${CURL_OPTS[@]}" -H "Accept: text/turtle" "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting Turtle for ${URI_BASE}/$1"; exit $err; }
-    curl "${CURL_OPTS[@]}" -H "Accept: application/rdf+xml" "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting RDF/XML for ${URI_BASE}/$1"; exit $err; }
-    curl "${CURL_OPTS[@]}" -H "Accept: application/n-triples" "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting N-Triples for ${URI_BASE}/$1"; exit $err; }
-    curl "${CURL_OPTS[@]}" -H "Accept: application/ld+json" "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting JSON-LD for ${URI_BASE}/$1"; exit $err; }
-    curl "${CURL_OPTS[@]}" --compressed -H "Accept: text/turtle;q=1.0,application/rdf+xml;q=0.8,application/n-triples;q=0.2,application/ld+json;q=0.1" "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting any RDF via conneg for ${URI_BASE}/$1"; exit $err; }
-    curl "${CURL_OPTS[@]}" -H "Accept: text/html;q=1.0,text/*;q=0.8" "${URI_BASE}/$1" > /dev/null || { err=$?; echo "Failed with error code $err while getting HTML for ${URI_BASE}/$1"; exit $err; }
+    curl "${CURL_OPTS[@]}" -H "Accept: text/turtle" "${URI_BASE}/$1" >/dev/null || {
+        err=$?
+        echo "Failed with error code $err while getting Turtle for ${URI_BASE}/$1"
+        exit $err
+    }
+    curl "${CURL_OPTS[@]}" -H "Accept: application/rdf+xml" "${URI_BASE}/$1" >/dev/null || {
+        err=$?
+        echo "Failed with error code $err while getting RDF/XML for ${URI_BASE}/$1"
+        exit $err
+    }
+    curl "${CURL_OPTS[@]}" -H "Accept: application/n-triples" "${URI_BASE}/$1" >/dev/null || {
+        err=$?
+        echo "Failed with error code $err while getting N-Triples for ${URI_BASE}/$1"
+        exit $err
+    }
+    curl "${CURL_OPTS[@]}" -H "Accept: application/ld+json" "${URI_BASE}/$1" >/dev/null || {
+        err=$?
+        echo "Failed with error code $err while getting JSON-LD for ${URI_BASE}/$1"
+        exit $err
+    }
+    curl "${CURL_OPTS[@]}" --compressed -H "Accept: text/turtle;q=1.0,application/rdf+xml;q=0.8,application/n-triples;q=0.2,application/ld+json;q=0.1" "${URI_BASE}/$1" >/dev/null || {
+        err=$?
+        echo "Failed with error code $err while getting any RDF via conneg for ${URI_BASE}/$1"
+        exit $err
+    }
+    curl "${CURL_OPTS[@]}" -H "Accept: text/html;q=1.0,text/*;q=0.8" "${URI_BASE}/$1" >/dev/null || {
+        err=$?
+        echo "Failed with error code $err while getting HTML for ${URI_BASE}/$1"
+        exit $err
+    }
 }
 
 test_ns "ns/promcode"
